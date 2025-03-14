@@ -1,0 +1,9 @@
+{
+	"name": "himani",
+	"location": "israelcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4aeb54b1-1f79-456a-b2a4-de6765db33bf",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}

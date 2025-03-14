@@ -1,0 +1,19 @@
+{
+	"name": "sinkdata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "snowflake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "RAW",
+			"table": {
+				"value": "@item()",
+				"type": "Expression"
+			}
+		}
+	}
+}

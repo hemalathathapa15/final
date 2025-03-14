@@ -1,0 +1,24 @@
+{
+	"name": "sinkcustomer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"customer": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "stage",
+			"table": {
+				"value": "@dataset().customer",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "customersourcedata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Data",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Customer.xlsx",
+				"container": "sourceinput"
+			}
+		},
+		"schema": []
+	}
+}

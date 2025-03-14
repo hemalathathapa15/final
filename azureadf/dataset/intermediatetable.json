@@ -1,0 +1,24 @@
+{
+	"name": "intermediatetable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"intermediatetable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "stage",
+			"table": {
+				"value": "@dataset().intermediatetable",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"name": "sinkapi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sinktableapi": {
+				"type": "string"
+			},
+			"prep": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().prep",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().sinktableapi",
+				"type": "Expression"
+			}
+		}
+	}
+}

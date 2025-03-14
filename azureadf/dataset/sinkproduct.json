@@ -1,0 +1,24 @@
+{
+	"name": "sinkproduct",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"products": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "stage",
+			"table": {
+				"value": "@dataset().products",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "sourcerawdata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onpremiseconnector",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@item()",
+				"type": "Expression"
+			}
+		}
+	}
+}

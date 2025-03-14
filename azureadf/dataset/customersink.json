@@ -1,0 +1,24 @@
+{
+	"name": "customersink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"customertable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "stage",
+			"table": {
+				"value": "@dataset().customertable",
+				"type": "Expression"
+			}
+		}
+	}
+}

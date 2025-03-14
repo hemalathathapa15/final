@@ -1,0 +1,77 @@
+{
+	"name": "copyrawdatatosnowflake",
+	"properties": {
+		"activities": [
+			{
+				"name": "copyrawdata",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('source')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "copyrawdatatosnowflake",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "SqlServerSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "SnowflakeV2Sink",
+									"importSettings": {
+										"type": "SnowflakeImportCopyCommand"
+									}
+								},
+								"enableStaging": true,
+								"stagingSettings": {
+									"linkedServiceName": {
+										"referenceName": "linkedservicestaging",
+										"type": "LinkedServiceReference"
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "rawsourcedata",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "rawsinkdata",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"source": {
+				"type": "Array",
+				"defaultValue": [
+					"CUSTOMERS",
+					"PRODUCTS",
+					"TRANSACTIONS"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
